@@ -5,7 +5,7 @@ app = express();
 
 let lightBulb = '#303030';
 
-app.get('/api/bulb/color', (req, res) => {
+app.get('/api/bulb/colour', (req, res) => {
   return res.send(lightBulb);
 });
 
@@ -19,7 +19,7 @@ app.put('/api/bulb/off', (req, res) => {
   return res.sendStatus(200)
 });
 
-app.put('/api/bulb/color', (req, res) => {
+app.put('/api/bulb/colour', (req, res) => {
   lightBulb = req.body
   return res.sendStatus(200)
 });
