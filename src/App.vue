@@ -17,9 +17,10 @@
       }
     },
     created() {
-      this.$api
-        .get('/bulb/color')
-        .then(response => (this.lightBulbColor = response))
+      this.$api.get('/bulb/color')
+        .then(function(response) {
+          this.lightBulbColor = response
+        }.bind(this))
     }
   }
 </script>
