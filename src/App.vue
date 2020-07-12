@@ -11,10 +11,15 @@
 
   export default {
     name: 'app',
-    computed: {
-      lightBulbColor() {
-        return 'yellow'
+    data() {
+      return {
+        lightBulbColor: 'yellow'
       }
+    },
+    created() {
+      this.$api
+        .get('/bulb/color')
+        .then(response => (this.lightBulbColor = response))
     }
   }
 </script>
