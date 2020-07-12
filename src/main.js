@@ -12,6 +12,7 @@ Vue.use({
   }
 })
 
+Vue.config.devtools = true
 
 new Vue({
   render: h => h(App)
