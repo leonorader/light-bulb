@@ -13,13 +13,18 @@
     name: 'app',
     data() {
       return {
-        lightBulbColor: 'yellow'
+        color: 'yellow'
+      }
+    },
+    computed: {
+      lightBulbColor() {
+        return this.color
       }
     },
     created() {
       this.$api.get('/bulb/color')
         .then(function(response) {
-          this.lightBulbColor = response
+          this.color = response
         }.bind(this))
     }
   }
