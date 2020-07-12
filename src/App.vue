@@ -1,7 +1,7 @@
 <template>
   <main id="app">
     <h1></h1>
-    <div :style="{'background-color': lightBulbColor}">
+    <div :style="{'background-color': lightBulbColor, display: 'block'}">
       <img alt="bulb" src="./assets/bulb-input-dark.png">
     </div>
   </main>
@@ -24,7 +24,7 @@
     created() {
       this.$api.get('/bulb/color')
         .then(function(response) {
-          this.color = response
+          this.color = response.data
         }.bind(this))
     }
   }
